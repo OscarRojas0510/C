@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/oscar/vscodeProjects/C",
-      "program": "/home/oscar/vscodeProjects/C/build/Debug/outDebug",
+      "cwd": "/home/oscar/vscodeProjects/C/src",
+      "program": "/home/oscar/vscodeProjects/C/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
