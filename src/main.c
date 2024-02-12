@@ -30,5 +30,9 @@ int main(int argc, char const *argv[])
     */
     printf("\nEste es un string: %s", string);
 
+    /*
+    Imprimir la dirección de memorio de una variable:
+    */
+    printf("\nEste es la dirección de string: %p", &string);
     return 0;
 }
