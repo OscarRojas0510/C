@@ -7,6 +7,7 @@ int main()
     int edad;
     double sueldo;
     bool esEmpConf;
+    int esEmpConfTemp;
     printf("Proporciona tu nombre: \n");
     scanf("%[^\n]s", nombre);
     printf("Proporciona tu edad : \n");
@@ -14,7 +15,8 @@ int main()
     printf("Proporciona tu sueldo (USD)\n");
     scanf("%lf", &sueldo);
     printf("Eres empleado de confianza? (1/0)\n");
-    scanf("%d", &esEmpConf);
+    scanf("%d", &esEmpConfTemp);
+    esEmpConf = esEmpConfTemp;
 
     printf("La información ingresada es:\n");
     printf("Nombre: %s\n", nombre);
