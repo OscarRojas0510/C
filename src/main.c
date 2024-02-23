@@ -5,9 +5,12 @@ int main()
     /*
     Pedir info desde consola
     */
-    int s;
-    printf("Ingresa una numero\n");
-    scanf("%d", &s);
-    printf("El numero ingresado : %d\n\n\n", s);
+    int cadena_length = 10;
+    char cadena[cadena_length];
+    printf("Ingresa un nombre: \n");
+
+    scanf("%s", cadena);
+    printf("\nEl nombre ingresado fue: %s\n", cadena);
+
     return 0;
 }
