@@ -9,7 +9,7 @@ int main()
     char cadena[cadena_length];
     printf("Ingresa un nombre: \n");
 
-    fgets(cadena, cadena_length, stdin);
+    gets(cadena);
 
     printf("\nEl nombre ingresado fue: %s\n", cadena);
 
