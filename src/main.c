@@ -1,15 +1,32 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 int main()
 {
-    /*
-    Arreglos
-    */
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
-    for (int i = 0; i < (int)sizeof(arr) / 4; i++)
+    char *cadena = NULL;
+    size_t longitud = 0;
+
+    // Pide al usuario que ingrese una cadena
+    printf("Introduce una cadena: ");
+
+    // Usa getline para leer una línea de longitud variable
+    if (getline(&cadena, &longitud, stdin) != -1)
     {
-        printf("arr[%d] = %d\n", i, arr[i]);
+        // Elimina el carácter de nueva línea (\n) al final de la cadena si está presente
+        if (cadena[strlen(cadena) - 1] == '\n')
+        {
+            cadena[strlen(cadena) - 1] = '\0';
+        }
+
+        // Imprime la cadena leída
+        printf("Cadena introducida: %s\nTamaño de la cadena: %d\n", cadena, sizeof(cadena));
+
+        // Liberar la memoria asignada dinámicamente
+        free(cadena);
+    }
+    else
+    {
+        // Manejar error de lectura
+        printf("Error al leer la cadena.\n");
     }
 
     return 0;
