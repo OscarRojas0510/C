@@ -2,32 +2,30 @@
 
 int main()
 {
-    char *cadena = NULL;
-    size_t longitud = 0;
+    int a = 10; // Variable normal
+    /*
+    La variable 'b', se declara como '*b', ya que el
+    asterisco significa que la variable es un apuntador,
+    un apuntador en una variable que no se asigna un espacio
+    en memoria propio, sino que comparte el espacio con otra
+    variable.
+    */
+    int *b = &a; // '&a' obtiene la dirección de memoria en hexadecimal
 
-    // Pide al usuario que ingrese una cadena
-    printf("Introduce una cadena: ");
+    imprimirAyB(a, *b);
 
-    // Usa getline para leer una línea de longitud variable
-    if (getline(&cadena, &longitud, stdin) != -1)
-    {
-        // Elimina el carácter de nueva línea (\n) al final de la cadena si está presente
-        if (cadena[strlen(cadena) - 1] == '\n')
-        {
-            cadena[strlen(cadena) - 1] = '\0';
-        }
+    printf("modificar a+=10\n");
+    a += 10;
+    imprimirAyB(a, *b);
 
-        // Imprime la cadena leída
-        printf("Cadena introducida: %s\nTamaño de la cadena: %d\n", cadena, sizeof(cadena));
-
-        // Liberar la memoria asignada dinámicamente
-        free(cadena);
-    }
-    else
-    {
-        // Manejar error de lectura
-        printf("Error al leer la cadena.\n");
-    }
-
+    printf("modificar *b-=10\n");
+    *b -= 10;
+    imprimirAyB(a, *b);
     return 0;
+}
+
+void imprimirAyB(int a, int b)
+{
+    printf("valor de a -> %d\n", a);
+    printf("valor de *b -> %d\n", b);
 }
